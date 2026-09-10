@@ -20,12 +20,13 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
       
-      # 關鍵新增：賦予 gradlew 執行權限
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      # 關鍵新增：讓 GitHub 自動安裝 Gradle 環境
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
       
+      # 關鍵修改：直接使用 gradle 指令，不再依賴缺失的 ./gradlew
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
