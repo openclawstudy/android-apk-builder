@@ -20,11 +20,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
       
-      # 關鍵新增：讓 GitHub 自動安裝 Gradle 環境
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 7.5  # 關鍵新增：指定使用舊版 Gradle
       
-      # 關鍵修改：直接使用 gradle 指令，不再依賴缺失的 ./gradlew
       - name: Build Debug APK
         run: gradle assembleDebug
       
