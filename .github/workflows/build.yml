@@ -23,7 +23,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: 7.5
+          gradle-version: 8.2  # 關鍵修改：升級到 8.2
       
       - name: Build Debug APK
         run: gradle assembleDebug
