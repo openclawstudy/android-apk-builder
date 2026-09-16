@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
 
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary_text"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- 顯示收據照片的地方，初始顯示一個系統相簿圖示 -->
+    <ImageView
+        android:id="@+id/ivReceipt"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:background="#EEEEEE" />
 
+    <!-- 掃描收據按鈕 -->
     <Button
-        android:id="@+id/clickButton"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="@string/click_me"
-        android:textSize="18sp"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/button_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
-
-    <TextView
-        android:id="@+id/countText"
+        android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/initial_count"
-        android:textSize="16sp"
-        android:textColor="@color/secondary_text"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clickButton" />
+        android:text="Scan Receipt"
+        android:textSize="18sp"
+        android:padding="12dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 確認按鈕：關鍵是 android:visibility="gone"，這代表它一開始是隱藏的 -->
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Confirm"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:visibility="gone" />
+
+</LinearLayout>
