@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleApp">
 
+        <!-- 主畫面 -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,11 +24,7 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
         <!-- FileProvider：用來安全地分享照片 URI 給相機 App -->
-=======
-        <!-- FileProvider 設定 (用來安全地分享照片 URI) -->
->>>>>>> d4ae3cb8b85bde609180692fa3b65504f01a70c3
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.sampleapp.fileprovider"
