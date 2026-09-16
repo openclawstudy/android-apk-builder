@@ -29,7 +29,8 @@ jobs:
       
       - name: Build Debug APK
         run: gradle assembleDebug
-      
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
