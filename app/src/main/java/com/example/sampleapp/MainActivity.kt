@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     private var photoUri: Uri? = null
 
     // ⚠️ 換成你自己的阿里雲百煉 API Key
-    private val dashscopeApiKey = "https://ws-fds9ry7h90ffrzte.cn-beijing.maas.aliyuncs.com/api/v1"
+    private val dashscopeApiKey = "sk-ws-H.PHPPPRY.wmD2.MEQCIEODMYlY7spvU7xQxyCPrhKx9RizBZOp_AozlSbyyNBqAiAc2rs2E_o2M472rpKwtiRKbxb5yWhJLEqUw_qBgO_b_w"
 
     // 拍照結果處理
     private val takePictureLauncher = registerForActivityResult(
